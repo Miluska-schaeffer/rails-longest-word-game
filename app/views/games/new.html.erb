@@ -1,0 +1,25 @@
+
+<div class="list">
+  <% a = @letters.split('') %>
+  <% a.each do |letter| %>
+
+    <ul>
+      <li> <%= letter %> </li>
+    </ul>
+
+<% end %>
+
+</div>
+
+<div>
+
+<form action="/score" method="POST" class="form-inline">
+  <label for="letter">Whats the longest word you can find?</label>
+  <input type="text" id="letter" name="letter">
+  <input type="button" value="Play">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+
+
+</form>
+</div>
